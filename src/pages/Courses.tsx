@@ -32,8 +32,8 @@ const Courses = () => {
       description:
         "Master AWS, Azure, and GCP. Build scalable cloud infrastructure with hands-on projects.",
       thumbnail: courseCloud,
-      price: "$199",
-      originalPrice: "$299",
+      price: "₹199",
+      originalPrice: "₹299",
       rating: 4.8,
       reviewCount: 342,
       duration: "12 weeks",
@@ -46,8 +46,8 @@ const Courses = () => {
       description:
         "Complete full stack development with Spring Boot, React, and microservices architecture.",
       thumbnail: courseFullstack,
-      price: "$179",
-      originalPrice: "$249",
+      price: "₹179",
+      originalPrice: "₹249",
       rating: 4.9,
       reviewCount: 568,
       duration: "16 weeks",
@@ -60,8 +60,8 @@ const Courses = () => {
       description:
         "Learn data analysis, machine learning, and AI with Python, pandas, and scikit-learn.",
       thumbnail: courseDatascience,
-      price: "$189",
-      originalPrice: "$279",
+      price: "₹189",
+      originalPrice: "₹279",
       rating: 4.7,
       reviewCount: 421,
       duration: "14 weeks",
@@ -74,8 +74,8 @@ const Courses = () => {
       description:
         "CI/CD pipelines, Docker, Kubernetes, and cloud deployment automation from scratch.",
       thumbnail: courseDevops,
-      price: "$169",
-      originalPrice: "$239",
+      price: "₹169",
+      originalPrice: "₹239",
       rating: 4.8,
       reviewCount: 297,
       duration: "10 weeks",
@@ -88,8 +88,8 @@ const Courses = () => {
       description:
         "Prepare for AWS certification. Master cloud architecture design and best practices.",
       thumbnail: courseAws,
-      price: "$229",
-      originalPrice: "$329",
+      price: "₹229",
+      originalPrice: "₹329",
       rating: 4.9,
       reviewCount: 512,
       duration: "8 weeks",
@@ -102,8 +102,8 @@ const Courses = () => {
       description:
         "Learn user-centered design, prototyping, and modern design tools like Figma and Adobe XD.",
       thumbnail: courseUiux,
-      price: "$149",
-      originalPrice: "$199",
+      price: "₹149",
+      originalPrice: "₹199",
       rating: 4.6,
       reviewCount: 284,
       duration: "8 weeks",
@@ -237,7 +237,7 @@ const Courses = () => {
                 <div className="space-y-3">
                   <Label className="text-base font-semibold">Price</Label>
                   <div className="space-y-2">
-                    {["All Prices", "Free", "Under $100", "$100 - $200", "Over $200"].map(
+                    {["All Prices", "Free", "Under ₹1000", "₹1000 - ₹2000", "Over ₹2000"].map(
                       (price) => (
                         <div key={price} className="flex items-center space-x-2">
                           <Checkbox id={price} />
