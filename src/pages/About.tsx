@@ -88,7 +88,7 @@ const About = () => {
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold">Our Mission</h2>
               <p className="text-lg text-muted-foreground">
-                At Khushal's Trial, we're on a mission to bridge the gap between
+                At Learnify, we're on a mission to bridge the gap between
                 education and employment. We provide industry-relevant, hands-on
                 training that prepares our students for real-world challenges.
               </p>

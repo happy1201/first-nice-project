@@ -255,7 +255,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold">
-                Why Choose Khushal's Trial?
+                Why Choose Learnify?
               </h2>
               <p className="text-lg text-muted-foreground">
                 We're committed to providing the best learning experience with

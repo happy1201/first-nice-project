@@ -14,7 +14,7 @@ const Footer = () => {
               <div className="bg-primary text-primary-foreground p-2 rounded-lg">
                 <GraduationCap className="w-5 h-5" />
               </div>
-              <span className="text-lg font-bold">Khushal's Trial</span>
+              <span className="text-lg font-bold">Learnify</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Transform your career with industry-leading courses and expert instructors.
@@ -118,7 +118,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Khushal's Trial. All rights reserved.</p>
+          <p>© {currentYear} Learnify. All rights reserved.</p>
         </div>
       </div>
     </footer>

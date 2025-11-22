@@ -253,7 +253,7 @@ const SignIn = () => {
         {/* Top navigation */}
         <div className="flex items-center justify-between mb-8">
           <div className="text-2xl font-bold font-serif text-foreground">
-            Khushal's trial
+            Learnify
           </div>
           <Link
             to="/"
@@ -282,7 +282,7 @@ const SignIn = () => {
                   Welcome back
                 </h1>
                 <p className="text-muted-foreground text-sm">
-                  Sign in to continue to Khushal's trial
+                  Sign in to continue to Learnify
                 </p>
               </div>
 

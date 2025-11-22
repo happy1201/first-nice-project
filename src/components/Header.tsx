@@ -40,7 +40,7 @@ const Header = () => {
               <GraduationCap className="w-5 h-5 lg:w-6 lg:h-6" />
             </div>
             <span className="text-xl lg:text-2xl font-bold text-foreground">
-              Khushal's Trial
+              Learnify
             </span>
           </Link>
 
