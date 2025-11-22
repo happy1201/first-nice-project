@@ -28,8 +28,8 @@ const Home = () => {
       description:
         "Master AWS, Azure, and GCP. Build scalable cloud infrastructure with hands-on projects.",
       thumbnail: courseCloud,
-      price: "$199",
-      originalPrice: "$299",
+      price: "₹199",
+      originalPrice: "₹299",
       rating: 4.8,
       reviewCount: 342,
       duration: "12 weeks",
@@ -42,8 +42,8 @@ const Home = () => {
       description:
         "Complete full stack development with Spring Boot, React, and microservices architecture.",
       thumbnail: courseFullstack,
-      price: "$179",
-      originalPrice: "$249",
+      price: "₹179",
+      originalPrice: "₹249",
       rating: 4.9,
       reviewCount: 568,
       duration: "16 weeks",
@@ -56,8 +56,8 @@ const Home = () => {
       description:
         "Learn data analysis, machine learning, and AI with Python, pandas, and scikit-learn.",
       thumbnail: courseDatascience,
-      price: "$189",
-      originalPrice: "$279",
+      price: "₹189",
+      originalPrice: "₹279",
       rating: 4.7,
       reviewCount: 421,
       duration: "14 weeks",
@@ -70,8 +70,8 @@ const Home = () => {
       description:
         "CI/CD pipelines, Docker, Kubernetes, and cloud deployment automation from scratch.",
       thumbnail: courseDevops,
-      price: "$169",
-      originalPrice: "$239",
+      price: "₹169",
+      originalPrice: "₹239",
       rating: 4.8,
       reviewCount: 297,
       duration: "10 weeks",

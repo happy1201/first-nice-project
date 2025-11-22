@@ -7,9 +7,65 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Check, Zap } from "lucide-react";
 import { useState } from "react";
+import { openRazorpayCheckout } from "@/lib/razorpay";
+import { useNavigate } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const navigate = useNavigate();
+
+  const handlePayment = async (planName: string, amountInPaise: number) => {
+    try {
+      await openRazorpayCheckout(
+        {
+          amount: amountInPaise,
+          currency: "INR",
+          name: "Khushal's Trial",
+          description: `${planName} Plan Subscription`,
+          prefill: {
+            name: "",
+            email: "",
+            contact: "",
+          },
+          notes: {
+            plan: planName,
+            billing: isAnnual ? "annual" : "monthly",
+          },
+        },
+        (response) => {
+          // Payment successful
+          toast({
+            title: "Payment Successful",
+            description: "Redirecting to success page...",
+          });
+          
+          navigate(
+            `/payment/success?order_id=${response.razorpay_order_id || ""}&payment_id=${response.razorpay_payment_id || ""}&amount=${amountInPaise}`
+          );
+        },
+        (error) => {
+          // Payment failed
+          toast({
+            title: "Payment Failed",
+            description: error.message || "Please try again",
+            variant: "destructive",
+          });
+          
+          navigate(
+            `/payment/failure?reason=${error.reason || "unknown"}&order_id=${error.metadata?.order_id || ""}`
+          );
+        }
+      );
+    } catch (error) {
+      console.error("Payment error:", error);
+      toast({
+        title: "Error",
+        description: "Unable to process payment. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
 
   const plans = [
     {
@@ -142,7 +198,7 @@ const Pricing = () => {
                       <>
                         <div className="flex items-baseline justify-center gap-2">
                           <span className="text-5xl font-bold">
-                            $
+                            ₹
                             {isAnnual
                               ? Math.round(plan.annualPrice! / 12)
                               : plan.monthlyPrice}
@@ -152,10 +208,10 @@ const Pricing = () => {
                         {isAnnual && savings && (
                           <div className="mt-2 space-y-1">
                             <p className="text-sm text-accent font-medium">
-                              Save ${savings.amount}/year ({savings.percentage}% off)
+                              Save ₹{savings.amount}/year ({savings.percentage}% off)
                             </p>
                             <p className="text-xs text-muted-foreground">
-                              Billed annually (${plan.annualPrice})
+                              Billed annually (₹{plan.annualPrice})
                             </p>
                           </div>
                         )}
@@ -190,6 +246,11 @@ const Pricing = () => {
                     className="w-full"
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
+                    onClick={() => {
+                      if (plan.monthlyPrice) {
+                        handlePayment(plan.name, isAnnual ? plan.annualPrice! : plan.monthlyPrice * 100);
+                      }
+                    }}
                   >
                     {plan.monthlyPrice ? "Get Started" : "Contact Sales"}
                   </Button>
